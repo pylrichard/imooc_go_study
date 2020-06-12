@@ -17,15 +17,6 @@ func euler() {
 	fmt.Printf("e^i(Pi)+1=%.3f\n", cmplx.Exp(1i * math.Pi) + 1)
 }
 
-func triangle() {
-	var a, b int = 3, 4
-	var c int
-	// 强制类型转换
-	c = int(math.Sqrt(float64(a*a + b*b)))
-	fmt.Println(c)
-}
-
 func main() {
-	euler();
-	triangle();
+	euler()
 }
