@@ -16,7 +16,7 @@ func printSlice(slice []int) {
 }
 
 func createSlice() {
-	fmt.Println("Create slice")
+	fmt.Println("--Create slice")
 	array := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
 	// 切片左闭右开
 	slice1 := array[2:6]
@@ -29,10 +29,10 @@ func createSlice() {
 	fmt.Println("array[:]=", slice4)
 	fmt.Println()
 
-	fmt.Println("After modifySlice(array[2:6])")
+	fmt.Println("--After modifySlice(array[2:6])")
 	modifySlice(slice1)
 	fmt.Println(array)
-	fmt.Println("After modifySlice(array[:])")
+	fmt.Println("--After modifySlice(array[:])")
 	modifySlice(slice4)
 	fmt.Println(array)
 
@@ -61,7 +61,7 @@ func createSlice() {
 }
 
 func copySlice() {
-	fmt.Println("Copy slice")
+	fmt.Println("--Copy slice")
 	slice1 := []int{2, 4, 6, 8}
 	// 需要预先分配空间
 	slice2 := make([]int, len(slice1))
@@ -73,7 +73,7 @@ func copySlice() {
 }
 
 func appendToSlice() {
-	fmt.Println("Append elements to slice")
+	fmt.Println("--Append elements to slice")
 	array := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
 	slice1 := array[2:6]
 	slice2 := slice1[3:5]
@@ -85,19 +85,19 @@ func appendToSlice() {
 }
 
 func deleteFromSlice() {
-	fmt.Println("Delete elements from slice")
+	fmt.Println("--Delete elements from slice")
 	slice1 := []int{2, 4, 6, 8}
 	// 删除slice1[1]即在slice1[0:1]添加slice1[2:]以及可变元素...
 	slice2 := append(slice1[0:1], slice1[2:]...)
 	printSlice(slice2)
 
-	fmt.Println("Popping from front")
+	fmt.Println("--Popping from front")
 	front := slice2[0]
 	slice2 = slice2[1:]
 	fmt.Println(front)
 	printSlice(slice2)
 	
-	fmt.Println("Popping from back")
+	fmt.Println("--Popping from back")
 	tail := slice2[len(slice2)-1]
 	slice2 = slice2[:len(slice2)-1]
 	fmt.Println(tail)
@@ -107,7 +107,7 @@ func deleteFromSlice() {
 func extendSlice() {
 	// 切片可以扩展访问底层数组，切片 = 指针ptr + 长度len + 容量cap
 	// 但只能向后扩展不能向前扩展，slice1[i]不可以超越len(slice1)，向后扩展不可以超越cap(slice1)
-	fmt.Println("Extend slice")
+	fmt.Println("--Extend slice")
 	array := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
 	slice1 := array[2:6]
 	fmt.Println("array[2:6]=", slice1)
@@ -122,7 +122,7 @@ func extendSlice() {
 }
 
 func reslice() {
-	fmt.Println("Reslice")
+	fmt.Println("--Reslice")
 	array := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
 	slice1 := array[2:6]
 	slice2 := array[2:]
